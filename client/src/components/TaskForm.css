@@ -1,0 +1,65 @@
+.formContainer {
+    width: 100vw;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+.formContainer form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.blockInput {
+    margin: 10px 0;
+}
+.blockInput label{
+    display: block;
+}
+.blockInput input {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+
+}
+.formContainer form button {
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    background-color: blue;
+    color: white
+}
+.hide {
+    display: none;
+}
+.taskCreatedMsg {
+    width: 350px;
+    margin: 0 auto;
+    background-color: #43df7f;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    margin-bottom: 5px; 
+}
+.alertMsg {
+    width: 350px;
+    margin: 0 auto;
+    background-color: #df4343;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    margin-bottom: 5px; 
+}
+@media screen and (min-width: 730px) {
+    .formContainer {
+        width: 730px;
+    }
+    .formContainer form {
+        flex-direction: row;
+        gap: 30px;
+    }
+    .formContainer form button {
+        position: relative;
+        top: 8px;
+    }
+}
