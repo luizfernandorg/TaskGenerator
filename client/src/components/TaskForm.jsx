@@ -24,19 +24,20 @@ const TaskForm = (props) => {
                     taskTitle: taskTitle,
                     taskDescription: taskDescription
                 })
-            }).then( (response) => {
+            }).then( async (response) => {
                 if (response.ok) {
-                    return response.json();
+                    return await response.json();
                 }
                 throw new Error(response.statusText);
             }).then( async (data) =>{
+                console.log(data)
                 setTaskTitle("")
                 setTaskDescription('')
                 document.querySelector(".taskCreatedMsg").classList.remove('hide')
                 setTimeout( () => {
                     document.querySelector(".taskCreatedMsg").classList.add('hide')
-                }, 5000)
-                props.update()
+                }, 2000)
+                await props.update()
             }).catch( (error) => {
                 console.log(`Form error: ${error}`)
             })

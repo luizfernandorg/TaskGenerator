@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './TaskItem.css'
 
 const TaskItem = (props) => {
@@ -21,6 +21,7 @@ const TaskItem = (props) => {
         }).then( async (response) => {
             return await response.json()
         }).then( async (data) => {
+            console.log(data)
             await props.update()
          }).catch( err => {
             console.log(err)
@@ -37,7 +38,6 @@ const TaskItem = (props) => {
     
     const onSubmitTask = (event) => {
         event.preventDefault()
-        console.log(parseInt(props.task.taskID))
         fetch('http://localhost:3000',{
             method: 'put',
             headers: {'ACCEPT': 'application/json', 'Content-Type': 'application/json'},
@@ -49,6 +49,7 @@ const TaskItem = (props) => {
         }).then( async (response) => {
             return await response.json()
         }).then( async (data) => {
+            console.log(data)
             await props.update()
             setEdit(false)
         }).catch( err => {
