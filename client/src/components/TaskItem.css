@@ -2,7 +2,7 @@
     width: 100vw;
     margin-bottom: 10px;
     padding: 20px;
-    background-color: rgb(242, 253, 255);
+    background-color: #f2fdff;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     height: 20vh;
     border-radius: 5px;
@@ -29,7 +29,7 @@
 }
 
 .editForm{
-    background-color: rgb(228, 228, 228);
+    background-color: #f2fdff;
     width: 100vw;
     margin-bottom: 10px;
     padding: 20px;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './TaskItem.css'
 
 const TaskItem = (props) => {
@@ -10,7 +10,7 @@ const TaskItem = (props) => {
     const onEdit = () => {
         setEdit(true)
     }
-    
+
     const onRemove = () => {
         fetch('http://localhost:3000',{
             method: 'delete',
