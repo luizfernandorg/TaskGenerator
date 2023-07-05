@@ -5,6 +5,7 @@ const TaskForm = (props) => {
 
     const [taskTitle, setTaskTitle] = useState("")
     const [taskDescription, setTaskDescription] = useState('')
+    const [taskDate, setTaskDate] = useState('')
 
     const onChangeTaskTitle = (event) => {
         setTaskTitle(event.target.value)
@@ -14,15 +15,20 @@ const TaskForm = (props) => {
         setTaskDescription(event.target.value)
         document.querySelector(".alertMsg").classList.add('hide')
     }
+    const onChangeTaskDate = (event) => {
+        setTaskDate(event.target.value)
+        document.querySelector(".alertMsg").classList.add('hide')
+    }
     const onSubmitTask = (event) => {
         event.preventDefault();
-        if(taskTitle.length && taskDescription.length){
+        if(taskTitle.length && taskDescription.length && taskDate.length){
             fetch('http://localhost:3000',{
                 method: 'post',
                 headers: {'ACCEPT': 'application/json', 'Content-Type': 'application/json'},
                 body: JSON.stringify({
                     taskTitle: taskTitle,
-                    taskDescription: taskDescription
+                    taskDescription: taskDescription,
+                    taskDate: taskDate
                 })
             }).then( async (response) => {
                 if (response.ok) {
@@ -33,6 +39,7 @@ const TaskForm = (props) => {
                 console.log(data)
                 setTaskTitle("")
                 setTaskDescription('')
+                setTaskDate('')
                 document.querySelector(".taskCreatedMsg").classList.remove('hide')
                 setTimeout( () => {
                     document.querySelector(".taskCreatedMsg").classList.add('hide')
@@ -57,6 +64,10 @@ const TaskForm = (props) => {
                 <div className='blockInput'>
                     <label htmlFor="inputDescription">Description</label>
                     <input type='text' id="inputDescription" value={taskDescription} onChange={onChangeTaskDescription}/>
+                </div>
+                <div className='blockInput'>
+                    <label htmlFor="inputDescription">Final Date</label>
+                    <input type='date' id="inputDescription" value={taskDate} onChange={onChangeTaskDate}/>
                 </div>
                 <button type='submit'>Save</button>
             </form>

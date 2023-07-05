@@ -52,10 +52,10 @@ app.post('/', (req,res) => {
     if(!jsonData.taskDescription.match(onlyLettersPattern)){
         return res.status(400).json({ err: "No special characters and no numbers, please!"})
     }
-    const SQL = 'INSERT INTO `ListTasks` (taskTitle, taskDescription) VALUES (?,?)'
+    const SQL = 'INSERT INTO `ListTasks` (taskTitle, taskDescription, taskDate) VALUES (?,?,?)'
 
     con.query(
-        SQL, [jsonData.taskTitle,jsonData.taskDescription],
+        SQL, [jsonData.taskTitle,jsonData.taskDescription, jsonData.taskDate],
         function(err, results, fields) {
             if(err) console.log(err)
             return

@@ -4,14 +4,20 @@
     padding: 20px;
     background-color: #f2fdff;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    height: 20vh;
     border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
 }
 .itemContainer:hover {
-    background-color: rgb(172, 228, 238);
+    background-color: rgb(223, 236, 238);
 }
 .button-block {
     margin-top : 10px;
+    width: 100%;
+    text-align: left;
 }
 .myBtn {
     margin-right: 10px;
@@ -51,8 +57,43 @@
     background-color: rgb(53, 53, 170);
     color: white;
 }
-@media screen and (min-width: 730px) {
+
+@media (min-width: 575px) {
+    .itemContainer,.editForm {
+        width: 570px;
+    }
+    .itemContainer {
+        flex-direction: row;
+        gap: 50px;     
+    }
+    .task-details {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .button-block {
+        margin-top : 10px;
+        text-align: right;
+    }
+}
+@media (max-width: 280px) {
+    .itemContainer{
+        justify-content: left;
+        align-items: left;
+    }
+}
+@media (min-width: 765px) {
+    .task-details {
+        width: 700px;
+    }
     .itemContainer,.editForm {
         width: 730px;
     }
+    .itemContainer {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
 }

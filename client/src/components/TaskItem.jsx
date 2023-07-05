@@ -77,9 +77,16 @@ const TaskItem = (props) => {
     } else {
         return (
             <div key={props.task.taskID} className='itemContainer'>
-                <h1>{props.task.taskTitle}</h1>
-                <div>
-                    {props.task.taskDescription}
+                <div className='task-details'>
+                    <div className='task-title'>
+                        <h4>{props.task.taskTitle}</h4>
+                    </div>
+                    <div className='task-description'>
+                        {props.task.taskDescription}
+                    </div>
+                </div>
+                <div className='task-date'>
+                    {new Date(props.task.taskDate).toLocaleDateString()}
                 </div>
                 <div className='button-block'>
                     <button className='myBtn itemEdit-Button' onClick={onEdit}>Edit</button>
