@@ -13,15 +13,15 @@ const TaskList = (props) => {
     }
     
     const onChangeTitle = (event) => {
+        const taskTitle = event.target.value 
         setEditTask( (prev) => {
-            const taskTitle = event.target.value 
             return {...prev,taskTitle}
         })
     }
 
     const onChangeDescription = (event) => {
+        const taskDescription = event.target.value
         setEditTask( (prev) => {
-            const taskDescription = event.target.value
             return {...prev,taskDescription}
         })
     }
