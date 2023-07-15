@@ -14,7 +14,7 @@ const con = mysql.createConnection({
 // const con = mysql.createConnection({
 //     host: "localhost",
 //     user: "root",
-//     password: "*Lfrg1532*",
+//     password: "",
 //     database: 'tasks',
 //     multipleStatements: false
 // })
