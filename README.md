@@ -1,5 +1,6 @@
 Create in the server folder an environment file ".env"
 Inside of the file .env create four variables
+    
     DATABASE_URL=""
     USER=""
     PASSWORD=""
