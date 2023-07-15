@@ -67,7 +67,7 @@
         gap: 50px;     
     }
     .task-details {
-        width: 500px;
+        width: 700px;
         display: flex;
         flex-direction: column;
         gap: 10px;

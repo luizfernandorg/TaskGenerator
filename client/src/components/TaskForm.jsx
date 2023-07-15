@@ -72,7 +72,7 @@ const TaskForm = (props) => {
                 <button type='submit'>Save</button>
             </form>
             <div className="hide alertMsg">
-                It is necessary to write a title and a description.
+                It is necessary to write a title, description ad Date.
             </div>
             <div className="hide taskCreatedMsg">
                 Task was created!
